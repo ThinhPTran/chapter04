@@ -40,5 +40,21 @@
    :count (count numbers)
    :avg (avg numbers)})
 
+;; To use keyword to get data with map
+(def identities 
+  [{:alias "Batman" :real "Bruce Wayne"}
+   {:alias "Spider-Man" :real "Peter Parker"}
+   {:alias "Santa" :real "Your mom"}
+   {:alias "Easter" :real "Your dad"}])
+
+;;(map :real identities)
+
+(defn testreducetotransform
+  []
+  (reduce (fn [new-map [key value]]
+            (assoc new-map key (inc val)))
+    {}
+    {:max 30 :min 10}))
+
 
 

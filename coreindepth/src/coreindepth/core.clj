@@ -83,8 +83,34 @@
   (drop-while #(< (:month %) 3) food-journal))
 
 (defn testfilter
-  )
+  []
+  (filter #(< (:human %) 5) food-journal))
 
+(defn testsome
+  []
+  (some #(> (:critter %) 5) food-journal))
+  
+(defn testsome1
+  []
+  (some #(> (:critter %) 3) food-journal))
+
+(defn testsome2
+  []
+  (some #(and (> (:critter %) 3) %) food-journal))
+
+(defn testsort
+  []
+  (sort [3 1 2]))
+
+(defn testsortby
+  []
+  (sort-by count ["aaa" "c" "bb"]))
+
+(defn testconcat
+  []
+  (concat [1 2] [3 4]))
+
+(def add10 (partial + 10))
 
 
 
